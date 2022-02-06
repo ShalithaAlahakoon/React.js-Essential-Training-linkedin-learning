@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import restaurant from './restaurant.jpg'
 
 
 function Header(props){
@@ -13,6 +14,7 @@ function Header(props){
 function Main(props){
   return(
     <section>
+      <img src={restaurant} alt="restaurant image" height={200} />
       <p>We provide you most {props.adjective} foods around.</p>
       <ul style={{textAlign : 'left'}}>
         {props.Dishes.map((dish) => <li key={dish.id}>{dish.title}</li>)}
