@@ -10,18 +10,12 @@ function RegularComponent(){
   return <h1>Everyone can see this component</h1>
 }
 
-function App(props) {
+function App() {
  
-    // if(props.auth){
-    //   return <SecretComponent/>
-    // }
-    // else{
-    //   return <RegularComponent/>
-    // }
 return(
-<div>
-  {props.auth ? <SecretComponent/>: <RegularComponent/>}
-</div>);
+  <>
+    <h1>Hello</h1>
+  </>
     
 }
 
