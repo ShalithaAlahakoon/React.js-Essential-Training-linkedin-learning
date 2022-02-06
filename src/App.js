@@ -26,7 +26,13 @@ function Footer(props){
   );
 }
 
+const dishes = [
+  "Macaroni",
+  "Salmon",
+  "Cheese Pizza"
+];
 
+dishes.map((dish)  => console.log(dish));
 
 function App() {
   return (
