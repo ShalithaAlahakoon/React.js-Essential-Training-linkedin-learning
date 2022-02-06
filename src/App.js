@@ -2,51 +2,27 @@ import React from 'react';
 import './App.css';
 import restaurant from './restaurant.jpg'
 
-
-function Header(props){
-  return(
-    <header>
-      <h1>{props.name}'s kitchen</h1>
-    </header>
-  );
+function SecretComponent() {
+  return <h1>This component is  visible to authorized persons only</h1>
 }
 
-function Main(props){
-  return(
-    <section>
-      <img src={restaurant} alt="restaurant image" height={200} />
-      <p>We provide you most {props.adjective} foods around.</p>
-      <ul style={{textAlign : 'left'}}>
-        {props.Dishes.map((dish) => <li key={dish.id}>{dish.title}</li>)}
-      </ul>
-    </section>
-  );
+function RegularComponent(){
+  return <h1>Everyone can see this component</h1>
 }
 
-function Footer(props){
-  return(
-    <footer>
-      <div>Copyright @ {props.year}</div>
-    </footer>
-  );
-}
-
-const dishes = [
-  "Macaroni",
-  "Salmon",
-  "Cheese Pizza",
-];
-
-const dishesObjects = dishes.map((dish, i) => ({id: i , title: dish}) )
-console.log(dishesObjects)
-function App() {
-  return (
-    <div className="App">
-      <Header name="Shalihta"/>
-      <Main adjective="amaizing" Dishes={dishesObjects}/>
-      <Footer year={new Date().getFullYear()}/>
-    </div>
-  );
+function App(props) {
+ 
+    // if(props.auth){
+    //   return <SecretComponent/>
+    // }
+    // else{
+    //   return <RegularComponent/>
+    // }
+return(
+<div>
+  {props.auth ? <SecretComponent/>: <RegularComponent/>}
+</div>);
+    
 }
 
 export default App;
